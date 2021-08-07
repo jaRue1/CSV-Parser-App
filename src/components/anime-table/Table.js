@@ -4,12 +4,13 @@ import 'react-table-6/react-table.css'
 // Using a functional component without state
 
 const Table = ({ data }) => {
-  const firstRow = data[0] // the columns of the table
-  const columns = []
-
-  for (let key in firstRow){
-    columns.push({Header: key, accessor: key })
+  if (!data || !data[0] ){
+    return null
   }
+  const columns = Object.keys(data[0]).map((key) => {
+    return {Header: key, accessor: key}
+  })
+
   return(
     <ReactTable
       className= "-striped -highlight"
