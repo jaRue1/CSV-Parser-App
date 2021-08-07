@@ -13,7 +13,7 @@ const Table = ({ data }) => {
 
   return(
     <ReactTable
-      className= "-striped -highlight"
+      className= "-striped -highlight anime-table"
       data={data} // data that was passed in as a prop
       columns={columns}
       defaultPageSize={100}

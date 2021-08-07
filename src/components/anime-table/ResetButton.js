@@ -2,7 +2,7 @@ import React from 'react'
 
 const ResetButton = ({onClick}) => {
   return(
-  <i className="ResetButton"
+  <i className="reset-button"
     onClick={onClick}
     title="Reset DataBase"
   >
