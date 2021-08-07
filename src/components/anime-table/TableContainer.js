@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
+import ResetButton from './ResetButton.js'
 import Table from "./Table.js"
-
+import KH from "../../res/gifs/KH.gif"
 export default class TableContainer extends Component { // react class component
   state = {
     data: [] // empty array 
@@ -16,7 +17,21 @@ export default class TableContainer extends Component { // react class component
   render() {
     console.log(this.state)
     return(
-      <Table data={this.state.data}/> // passing the data into this component call Table
+      <>
+      <div>
+
+        <div className="centered-row" style={{ paddingTop: 10, paddingBottom: 10 }}>
+          <p className="table-title"> Anime Info</p>
+          <ResetButton onClick={ () => console.log(" Reset Button Clicked")} />
+        </div>
+
+        <div className="centered-row">
+          <img src={KH} alt="kingdom hearts gif"/>
+        </div>
+
+      </div>
+      <Table data={this.state.data}/> {/* // passing the data into this component call Table */}
+      </>
     )
   }
 }
