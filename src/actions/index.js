@@ -1,5 +1,6 @@
 import alt from "../alt"
 import toastr from "toastr"
+import history from "../history"
 
 class Actions{
   getAnimes(payload){
@@ -34,6 +35,22 @@ class Actions{
     toastr.success("Reset User_Review Table")
     return payload
   }
+
+   getAllGenres(payload){
+     return payload
+   }
+
+   getLargestAnimeId(payload){
+    return payload
+   }
+
+   addAnime(anime){
+    const {name , type } = anime
+    toastr.success(`Added the ${type.toLowerCase()} ${name} to the Anime Table`)
+    history.push('/home')
+    return anime
+   }
+
 }
 
 export default alt.createActions(Actions)
