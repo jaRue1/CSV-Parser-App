@@ -2,19 +2,25 @@ import React, {Component} from 'react'
 import ResetButton from './ResetButton.js'
 import Table from "./Table.js"
 import KH from "../../res/gifs/KH.gif"
-
+import AnimeStore from "../../stores/AnimeStore"
+import Actions from "../../actions"
 export default class TableContainer extends Component { // react class component
   state = {
-    data: [] // empty array 
+    animes: [] // empty array 
   }
 
   componentDidMount() {
-    fetch('http://localhost:4000/getAllAnime') // api point that gets all Anime
-    .then(res => res.json())
-    .then(json => {
-      this.setState({data: json}) // setting the data I get back from my api call to state
-    })
+    AnimeStore.listen(this.onChange)
+    Actions.getAnimes("")
   }
+  componentWillUnmount() {
+    AnimeStore.unlisten(this.onChange)
+  }
+  onChange = store => {
+    const { animes } = store
+    this.setState({animes})
+  }
+
   render() {
     console.log(this.state)
     return(
@@ -31,7 +37,7 @@ export default class TableContainer extends Component { // react class component
         </div>
 
       </div>
-      <Table data={this.state.data}/> {/* // passing the data into this component call Table */}
+      <Table data={this.state.animes}/> {/* // passing the data into this component call Table */}
       </>
     )
   }

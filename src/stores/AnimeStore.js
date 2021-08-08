@@ -11,7 +11,7 @@ class AnimeStore{
       handleGetAnimes: Actions.GET_ANIMES 
     })
   }
-  handleGetAnime = payload => {
+  handleGetAnimes = payload => {
     console.log('get animes from AnimeStore')
     fetch(getAllUrl)
       .then(res =>  res.json())
