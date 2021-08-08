@@ -17,7 +17,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
           </Link>
         </li>
         <li>
-          <Link to="/user">
+          <Link to="/users">
             <FontAwesomeIcon icon={faUser} />
           </Link>
         </li>

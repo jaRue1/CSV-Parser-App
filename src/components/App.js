@@ -18,7 +18,7 @@ export default class App extends Component {
           <Route path="/home" exact component={TableContainer} />
           <Route path="/add" exact component={AnimeForm} />
           <Route path="/list" exact component={AnimeListContainer} />
-          <Route path="/user" exact component={UserListContainer} />
+          <Route path="/users" exact component={UserListContainer} />
           <Route />
         </Switch>
       </Router>

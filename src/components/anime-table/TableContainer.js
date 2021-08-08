@@ -21,15 +21,35 @@ export default class TableContainer extends Component { // react class component
     this.setState({animes})
   }
 
+  handleDelete = event =>{
+    const { id } = event.target
+    Actions.deleteAnime(id)
+  }
+
+  handleReset = () =>{
+    Actions.resetAnimeTable("")
+    Actions.resetAnimeGenreTable("")
+    Actions.resetUserTable("")
+    Actions.resetReviewTable("")
+    Actions.resetUserReviewTable("")
+  }
+
   render() {
-    console.log(this.state)
+    
+    if(!this.state.animes){
+      return null;
+    }
+      const data = this.state.animes.map(anime => {
+        anime.Actions = <i className ="fa fa-trash-alt delete-button" id = {anime.anime_id} onClick={this.handleDelete} title="Delete"  />
+        return anime
+      })
     return(
       <>
       <div>
                                    {/* minior styling */}
         <div className="centered-row" style={{ paddingTop: 10, paddingBottom: 10 }}> 
           <p className="table-title"> Anime Information</p>
-          <ResetButton onClick={ () => console.log(" Reset Button Clicked")} />
+          <ResetButton onClick={this.handleReset} />
         </div>
 
         <div className="centered-row">
@@ -37,7 +57,7 @@ export default class TableContainer extends Component { // react class component
         </div>
 
       </div>
-      <Table data={this.state.animes}/> {/* // passing the data into this component call Table */}
+      <Table data={data}/> {/* // passing the data into this component call Table */}
       </>
     )
   }
