@@ -1,9 +1,12 @@
 import React, { Component } from "react"
 import TableContainer from "./anime-table/TableContainer.js"
-import Table from "./anime-table/Table.js"
+
 import MenuBar from "./navbar/MenuBar.js"
 import history from "../history.js"
 import { Router, Route, Switch } from "react-router-dom"
+import AnimeForm from "./anime-form/AnimeForm.js"
+import AnimeListContainer from "./anime-list/AnimeListContainer.js"
+import UserListContainer from "./user-list/UserListContainer.js"
 
 export default class App extends Component {
   // react class component
@@ -13,7 +16,9 @@ export default class App extends Component {
         <MenuBar />
         <Switch>
           <Route path="/home" exact component={TableContainer} />
-          <Route path="/test" exact component={Table} />
+          <Route path="/add" exact component={AnimeForm} />
+          <Route path="/list" exact component={AnimeListContainer} />
+          <Route path="/user" exact component={UserListContainer} />
           <Route />
         </Switch>
       </Router>
