@@ -5,6 +5,7 @@ const getAllUrl = "http://localhost:4000/getAllAnime"
 const deleteUrl = "http://localhost:4000/deleteAnime/"
 const resetAnimeUrl = "http://localhost:4000/resetAnime"
 const resetAnimeGenreUrl = "http://localhost:4000/resetAnimeGenre"
+
 class AnimeStore{
   constructor() {
     this.anime = []
