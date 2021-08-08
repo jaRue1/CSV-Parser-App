@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import ResetButton from './ResetButton.js'
 import Table from "./Table.js"
 import KH from "../../res/gifs/KH.gif"
+
 export default class TableContainer extends Component { // react class component
   state = {
     data: [] // empty array 
@@ -19,9 +20,9 @@ export default class TableContainer extends Component { // react class component
     return(
       <>
       <div>
-
-        <div className="centered-row" style={{ paddingTop: 10, paddingBottom: 10 }}>
-          <p className="table-title"> Anime Info</p>
+                                   {/* minior styling */}
+        <div className="centered-row" style={{ paddingTop: 10, paddingBottom: 10 }}> 
+          <p className="table-title"> Anime Information</p>
           <ResetButton onClick={ () => console.log(" Reset Button Clicked")} />
         </div>
 

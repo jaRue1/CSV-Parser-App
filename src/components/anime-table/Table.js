@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactTable from 'react-table-6'
+import LoadingBar from '../loader/LoadingBar'
 import 'react-table-6/react-table.css'
 // Using a functional component without state
 
-const Table = ({ data }) => {
+function Table ({ data }){
   if (!data || !data[0] ){
-    return null
+    return <LoadingBar/>
   }
-  const columns = Object.keys(data[0]).map((key) => {
+  const columns = Object.keys(data[0]).map((key) => { // 
     return {Header: key, accessor: key}
   })
 
