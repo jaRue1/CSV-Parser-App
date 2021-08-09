@@ -229,3 +229,25 @@ label {
 .genre-button:hover{
   background-color: var(--primary-dark-green);
 }
+
+.sprite-container{
+  padding: 5px 20px 20px 20px;
+  background-color: #1d1d2b;
+  border: 1px solid white;
+  display: inline-block;
+  width: 250px;
+  height: 310px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  transition: all 0.3s ease-in-out;
+  vertical-align: bottom;
+}
+.sprite-container:hover{
+  transform: scale(1.04);
+}
+.sprite-title{
+  background-color: #1d1d2b;
+  border-radius: 1px;
+  padding-top: 5px;
+  color: white;
+}
