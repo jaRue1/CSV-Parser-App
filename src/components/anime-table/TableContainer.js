@@ -32,6 +32,7 @@ export default class TableContainer extends Component { // react class component
     Actions.resetUserTable("")
     Actions.resetReviewTable("")
     Actions.resetUserReviewTable("")
+    Actions.resetOtherAnimeGenreTable("")
   }
 
   render() {

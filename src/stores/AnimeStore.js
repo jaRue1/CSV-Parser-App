@@ -4,7 +4,8 @@ const axios = require('axios')
 const getAllUrl = "http://localhost:4000/getAllAnime"
 const deleteUrl = "http://localhost:4000/deleteAnime/"
 const resetAnimeUrl = "http://localhost:4000/resetAnime"
-const resetAnimeGenreUrl = "http://localhost:4000/resetAnimeGenre"
+const resetAnimeGenreUrl = "http://localhost:4000/resetAnimeGenre" //genres 
+const resetOtherAnimeGenreTableUrl ='http://localhost:4000/resetOtherAnimeGenreTable' //anime_genres
 const addUrl = "http://localhost:4000/addAnime/"
 
 class AnimeStore{
@@ -15,7 +16,8 @@ class AnimeStore{
       handleGetAnimes: Actions.GET_ANIMES, 
       handleDeleteAnime: Actions.DELETE_ANIME,
       handleResetAnime: Actions.RESET_ANIME_TABLE,
-      handleResetAnimeGenre: Actions.RESET_ANIME_GENRE_TABLE,
+      handleResetAnimeGenre: Actions.RESET_ANIME_GENRE_TABLE, //genres
+      handleResetOtherAnimeGenre: Actions.RESET_OTHER_ANIME_GENRE_TABLE, //anime_genres
       handleAddAnime: Actions.ADD_ANIME
     })
   }
@@ -43,11 +45,17 @@ class AnimeStore{
       this.handleGetAnimes("")
     })
   }
-
+  //genre table 
   handleResetAnimeGenre = payload => {
-    console.log(`AnimeStore :: handle reset anime genre table with ${payload}`)
+    console.log(`AnimeStore :: handle reset genre table with ${payload}`)
     fetch(`${resetAnimeGenreUrl}`)
   }
+    //anime_genre table 
+  handleResetOtherAnimeGenre = payload => {
+    console.log(`AnimeStore :: handle reset of the other anime genre table with ${payload}`)
+    fetch(`${resetOtherAnimeGenreTableUrl}`)
+  }
+
 
   handleAddAnime = anime => {
     console.log(`AnimeStore :: handle add anime w/ anime ${anime}`)

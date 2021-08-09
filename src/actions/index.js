@@ -16,11 +16,6 @@ class Actions{
     return payload
   }
   
-  resetAnimeGenreTable(payload){
-    toastr.success("Reset Anime_Genre Table")
-    return payload
-  }
-
   resetUserTable(payload){
     toastr.success("Reset Users Table")
     return payload
@@ -33,6 +28,16 @@ class Actions{
   
   resetUserReviewTable(payload){
     toastr.success("Reset User_Review Table")
+    return payload
+  }
+  // genre 
+  resetAnimeGenreTable(payload){
+    toastr.success("Reset Genre Table")
+    return payload
+  }
+  // anime_genre
+  resetOtherAnimeGenreTable(payload){
+    toastr.success("Reset Other Anime_Genre Table")
     return payload
   }
 
