@@ -104,7 +104,6 @@ input[type="submit"]:focus{
 .menu-bar-items >li a:hover{
   background-color: var(--primary-dark-green);
   color: white;
-<<<<<<< HEAD
 }
 
 .delete-button {
@@ -251,6 +250,4 @@ label {
   border-radius: 1px;
   padding-top: 5px;
   color: white;
-=======
->>>>>>> main
 }
