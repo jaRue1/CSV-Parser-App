@@ -1,5 +1,9 @@
 import React, { Component } from "react"
 import TableContainer from "./anime-table/TableContainer.js"
+import Table from "./anime-table/Table.js"
+import MenuBar from "./navbar/MenuBar.js"
+import history from "../history.js"
+import { Router, Route, Switch } from "react-router-dom"
 
 import MenuBar from "./navbar/MenuBar.js"
 import history from "../history.js"
